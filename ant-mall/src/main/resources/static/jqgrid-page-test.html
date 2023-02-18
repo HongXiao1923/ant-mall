@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jqGrid分页测试</title>
+    <link rel="stylesheet" href="jqGrid-5.8.2/ui.jqgrid-bootstrap.css"/>
+    <link rel="stylesheet" href="jqGrid-5.8.2/ui.jqgrid-bootstrap4.css"/>
+</head>
+<body>
+<div style="margin: 24px;">
+    <!--数据展示列表-->
+    <table id="jqGrid" class="table table-bordered"></table>
+    <!--分页按钮展示区-->
+    <div id="jqGridPager"></div>
+</div>
+</body>
+<!--首先引入字节跳动提供的js文件，jqGrid依赖jQuery，故先引入jquery.min.js-->
+<script src="https://s3.pstatp.com/cdn/expire-1-M/jquery/3.3.1/jquery.min.js"></script>
+<!--以下js文件为国际化所需文件，cn表示中文-->
+<script src="jqGrid-5.8.2/grid.locale-cn.js"></script>
+<script src="jqGrid-5.8.2/jquery.jqGrid.min.js>"></script>
+</html>

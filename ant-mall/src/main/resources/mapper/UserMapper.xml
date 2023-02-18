@@ -13,6 +13,20 @@
         order by id desc
     </select>
 
+    <!--查询当前页用户列表-->
+    <select id="findUsers" parameterType="Map" resultMap="UserResult">
+        select id, name, password from user_test
+        order by id desc
+        <if test="start != null and limit != null">
+            limit #{start}, #{limit}
+        </if>
+    </select>
+
+    <!--查询用户总数-->
+    <select id="getTotalUsers" parameterType="Map" resultType="int">
+        select count(*) from user_test
+    </select>
+
     <insert id="insertUser" parameterType="ryan.ant.mall.entity.User">
         insert into user_test(name, password)
         values(#{name}, #{password})
