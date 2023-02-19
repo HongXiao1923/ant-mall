@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Spring Boot 多文件上传测试（文件名相同）</title>
+</head>
+<body>
+<form action="/uploadFilesBySameName" method="post" enctype="multipart/form-data">
+    <input type="file" name="files"><br>
+    <input type="file" name="files"><br>
+    <input type="file" name="files"><br>
+    <input type="file" name="files"><br>
+    <input type="file" name="files"><br>
+    <hr/>
+    <input type="submit" value="点击完成上传">
+</form>
+</body>
+</html>
