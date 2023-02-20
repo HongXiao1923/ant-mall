@@ -39,7 +39,7 @@ public class CaptchaController {
         if(!StringUtils.hasLength(code)){
             return "验证码不能为空";
         }
-        String captchaCode = (String) session.getAttribute("verifyCode" + "");
+        String captchaCode = session.getAttribute("verifyCode") + "";
         if(!StringUtils.hasLength(captchaCode) || !code.toLowerCase().equals(captchaCode)){
             return "验证码错误";
         }

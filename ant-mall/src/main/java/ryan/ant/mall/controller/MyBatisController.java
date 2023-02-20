@@ -3,7 +3,7 @@ package ryan.ant.mall.controller;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
-import ryan.ant.mall.dao.UserDao;
+import ryan.ant.mall.dao.UserMapper;
 import ryan.ant.mall.entity.User;
 
 import javax.annotation.Resource;
@@ -13,11 +13,11 @@ import java.util.List;
 public class MyBatisController {
 
     @Resource
-    UserDao userDao;
+    UserMapper userMapper;
 
     @GetMapping("/user/mybatis/queryAll")
     public List<User> queryAll(){
-        return userDao.findAllUsers();
+        return userMapper.findAllUsers();
     }
 
     @GetMapping("/user/mybatis/insert")
@@ -28,7 +28,7 @@ public class MyBatisController {
         User user = new User();
         user.setName(name);
         user.setPassword(password);
-        return userDao.insertUser(user) > 0;
+        return userMapper.insertUser(user) > 0;
     }
 
     @GetMapping("/user/mybatis/update")
@@ -40,7 +40,7 @@ public class MyBatisController {
         user.setId(id);
         user.setName(name);
         user.setPassword(password);
-        return userDao.updateUser(user) > 0;
+        return userMapper.updateUser(user) > 0;
     }
 
     @GetMapping("/user/mybatis/delete")
@@ -48,6 +48,6 @@ public class MyBatisController {
         if(id == null || id < 1){
             return false;
         }
-        return userDao.deleteUser(id) > 0;
+        return userMapper.deleteUser(id) > 0;
     }
 }

@@ -7,7 +7,7 @@ import ryan.ant.mall.util.PageQueryUtil;
 import java.util.List;
 
 @Component
-public interface UserDao {
+public interface UserMapper {
     /* Todo 定义增、删、改、查 */
     List<User> findAllUsers();
     int insertUser(User user);
